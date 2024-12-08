@@ -24,13 +24,13 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
       - name: Build APK
-        run: flutter build apk --release
+        run: flutter build apk --debug
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
          name: Releases
          path: |
-           build/app/outputs/flutter-apk/app-release.apk
+           build/app/outputs/flutter-apk/app-debug.apk
       - name: Extract version from pubspec.yaml
         id: extract_version
         run: |
